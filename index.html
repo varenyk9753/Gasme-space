@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Темна ігрова бібліотека з улюбленими іграми та налаштуваннями."
+    />
+    <title>Game Space</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar" aria-label="Бічна панель">
+        <button class="profile" type="button" aria-label="Відкрити профіль">
+          <span class="profile__avatar" aria-hidden="true">V</span>
+          <span class="profile__name">профіль</span>
+          <span class="profile__chevron" aria-hidden="true">⌄</span>
+        </button>
+
+        <nav class="navigation" aria-label="Головна навігація">
+          <button class="navigation__item" type="button" data-page="home">
+            <span class="navigation__icon" aria-hidden="true">⌂</span>
+            <span>Головна</span>
+          </button>
+          <button class="navigation__item" type="button" data-page="library">
+            <span class="navigation__icon" aria-hidden="true">▦</span>
+            <span>Бібліотека</span>
+          </button>
+          <button class="navigation__item" type="button" data-page="wishlist">
+            <span class="navigation__icon" aria-hidden="true">♡</span>
+            <span>Бажане</span>
+          </button>
+          <button class="navigation__item" type="button" data-page="new">
+            <span class="navigation__icon" aria-hidden="true">✦</span>
+            <span>Новинки</span>
+          </button>
+          <button class="navigation__item" type="button" data-page="settings">
+            <span class="navigation__icon" aria-hidden="true">⚙</span>
+            <span>Налаштування</span>
+          </button>
+        </nav>
+
+        <div class="sidebar__footer">
+          <span class="status-dot" aria-hidden="true"></span>
+          Усі системи працюють
+        </div>
+      </aside>
+
+      <main class="main-panel">
+        <header class="topbar">
+          <a class="brand" href="#" aria-label="Game Space — головна">
+            <span class="brand__mark" aria-hidden="true">G</span>
+            <span>GAME SPACE</span>
+          </a>
+          <label class="search">
+            <span class="search__icon" aria-hidden="true">⌕</span>
+            <span class="sr-only">Пошук ігор</span>
+            <input id="game-search" type="search" placeholder="Пошук ігор..." autocomplete="off" />
+            <kbd>⌘ K</kbd>
+          </label>
+          <button class="icon-button topbar__notifications" type="button" aria-label="Сповіщення">
+            ♧
+            <span class="notification-dot" aria-hidden="true"></span>
+          </button>
+        </header>
+
+        <section id="page-content" class="page-content" aria-live="polite"></section>
+      </main>
+    </div>
+
+    <dialog class="game-dialog" id="game-dialog">
+      <button class="game-dialog__close icon-button" type="button" aria-label="Закрити">×</button>
+      <div class="game-dialog__art game-art" id="dialog-art"></div>
+      <div class="game-dialog__content">
+        <p class="eyebrow">ІНФОРМАЦІЯ ПРО ГРУ</p>
+        <h2 id="dialog-title"></h2>
+        <p id="dialog-description"></p>
+        <button class="button button--primary" type="button" id="dialog-action">До бібліотеки</button>
+      </div>
+    </dialog>
+  </body>
+</html>
